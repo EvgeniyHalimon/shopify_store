@@ -1,0 +1,52 @@
+<header class="header">
+  <h1>
+    Very very affordable
+  </h1>
+  <ul class="header-navigation">
+    {% for link in linklists.main-menu.links -%}
+      {{ link.title | link_to: link.url }}
+    {%- endfor %}
+  </ul>
+
+  {% if section.settings.show_search %}
+    <form action="/search">
+      <input type="search" name="q">
+      <button type="submit">Search</button>
+    </form>
+  {% endif %}
+</header>
+
+<style>
+  .header-navigation {
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+
+  .header-navigation a {
+    text-decoration: none;
+    font-size: 24px;
+    transition: all 0.5s ease;
+  }
+
+  .header-navigation a:hover {
+    opacity: 0.6;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search form?"
+      }, {
+        "type": "color",
+        "id": "bg",
+        "label": "Background color"
+      }
+    ]
+  }
+{% endschema %}

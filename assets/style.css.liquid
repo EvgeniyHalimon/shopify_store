@@ -1,0 +1,35 @@
+body {
+  background-color: {{ settings.bg }}
+  ;
+  color: {{ settings.text_color }}
+  ;
+  padding: 20px 50px;
+}
+
+a {
+  color: black;
+}
+a:visited {
+  color: inherit !important;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 400px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.added-to-cart {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}

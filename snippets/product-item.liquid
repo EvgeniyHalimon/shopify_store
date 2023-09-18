@@ -1,0 +1,24 @@
+<div class="product-card">
+  <a href="{{ product.url }}">
+    <img src="{{ product.featured_image | image_url: width : 400 }}" />
+    <h3 class="product-title">{{ product.title }}</h3>
+    <p class="product-price">{{ product.price | money_with_currency }}</p>
+  </a>
+</div>
+
+<style>
+  img {
+    border-radius: 4px;
+    transition: all 0.5s ease;
+  }
+
+  img:hover {
+    opacity: 0.8;
+  }
+
+  .product-price,
+  .product-title,
+  a {
+    text-decoration: none;
+  }
+</style>
